@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example</title>
+    <style>
+        body {
+            height: auto;
+            width: auto;
+        }
+
+        .dot {
+            width: 2px;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+        }
+
+        .check-box {
+
+        }
+
+        .check-box-label {
+
+        }
+
+        .centered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    </style>
+    <!-- Import TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.4.0/dist/tf.min.js"></script>
+    <!-- Import tfjs-vis -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.4.3/dist/tfjs-vis.umd.min.js"></script>
+</head>
+<body>
+
+Samples: <div id="num-of-samples">0</div>
+<textarea id="samples" rows="4" cols="50" style="height: 500px"></textarea>
+<br>
+<button id="record-btn">Record</button>
+<button id="remove-last-btn">Remove last</button>
+<button id="play-btn">Play</button>
+<button id="clear-btn">Clear samples</button>
+<br>
+<button id="train-btn">TRAIN MODEL</button>
+<button id="save-btn">SAVE MODEL</button>
+<br>
+Upload model json:
+<input type="file" id="upload-json">
+<br>
+Upload model weights:
+<input type="file" id="upload-weights"/>
+<br>
+<button id="load-btn">LOAD MODEL</button>
+<br>
+<button id="test-btn">TEST</button>
+<br>
+<input type="checkbox" id="hack-cb">
+
+<label for="vertical-cb">Vertical</label>
+<input type="checkbox" id="vertical-cb">
+
+<label for="vertical-random-cb">Vertical random</label>
+<input type="checkbox" id="vertical-random-cb">
+
+<label for="horizontal-random-cb">Horizontal random</label>
+<input type="checkbox" id="horizontal-random-cb">
+<br>
+<label for="vertical-random-diff-cb">Vertical random different</label>
+<input type="checkbox" id="vertical-random-diff-cb">
+
+<label for="random-cb">Random</label>
+<input type="checkbox" id="random-cb">
+<br>
+<textarea id="test-results" rows="4" cols="50" style="height: 200px"></textarea>
+
+<div id="cblist">
+    <div id="Timer" class="centered"></div>
+    <canvas id="myCanvas" class="centered" width="500" height="500" style="border:10px solid #d3d3d3;"></canvas>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="get_data.js"></script>
+<script src="teach_and_run.js"></script>
+</body>
+</html>
